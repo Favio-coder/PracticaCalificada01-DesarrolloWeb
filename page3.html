@@ -4,40 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo Más Vendido - Tienda de Zapatos</title>
-
-    <link rel="stylesheet" href="page3.css">
+    <link rel="stylesheet" href="assets/styles/page3.css">
 </head>
 <body>
     <div class="container">
 
         <h1 class="main-title">Lo Más Vendido</h1>
 
-
         <div class="top-section">
-            <div class="sub-categories">
-                <span class="highlight">DÁMAS</span>
-                <span>CABALLEROS</span>
-                <span>KIDS</span>
+            <div class="sub-categories" id="categoriaFiltro">
+                <span class="highlight" data-categoria="todos">TODOS</span>
+                <span data-categoria="damas">DÁMAS</span>
+                <span data-categoria="caballeros">CABALLEROS</span>
+                <span data-categoria="kids">KIDS</span>
             </div>
 
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="imagen1.png" alt="Botas Sokso">
+            <div class="product-grid" id="productosContainer">
+                <div class="product-card" data-categoria="damas">
+                    <img src="assets/images/images1.jpg" alt="Botas Sokso">
                     <div class="product-name">BOTAS SOKSO</div>
                     <div class="product-price">S/.189</div>
                 </div>
-                <div class="product-card">
-                    <img src="imagen2.png" alt="Zapatilla Sokso">
+                <div class="product-card" data-categoria="damas">
+                    <img src="assets/images/imagen1.jpg" alt="Zapatilla Sokso">
                     <div class="product-name">ZAPATILLA SOKSO</div>
                     <div class="product-price">S/.118</div>
                 </div>
-                <div class="product-card">
-                    <img src="imagen3.png" alt="Zapatos Estela Sokso">
+                <div class="product-card" data-categoria="caballeros">
+                    <img src="assets/images/imagen2.jpg" alt="Zapatos Estela Sokso">
                     <div class="product-name">ZAPATOS ESTELA SOKSO</div>
                     <div class="product-price">S/.278</div>
                 </div>
-                <div class="product-card">
-                    <img src="imagen4.png" alt="Zapatos Nina Simik">
+                <div class="product-card" data-categoria="kids">
+                    <img src="assets/images/NIÑA.jpg" alt="Zapatos Nina Simik">
                     <div class="product-name">ZAPATOS NINA SIMIK</div>
                     <div class="product-price">S/.149</div>
                 </div>
@@ -48,54 +47,48 @@
             <h2>Grandes Marcas</h2>
 
             <div class="brands-grid">
-
                 <div class="brand-item">
-                    <img src="imagen5.png" alt="Adidas Hombre">
+                    <img src="assets/images/imagen5.png" alt="Adidas Hombre">
                     <div class="brand-name">Adidas Hombre</div>
                     <div class="brand-links">
                         <a href="#">sección</a>
                         <a href="#">ver colección</a>
                     </div>
                 </div>
-  
                 <div class="brand-item">
-                    <img src="imagen6.png" alt="Adidas Mujer">
+                    <img src="assets/images/imagen6.png" alt="Adidas Mujer">
                     <div class="brand-name">Adidas Mujer</div>
                     <div class="brand-links">
                         <a href="#">sección</a>
                         <a href="#">ver colección</a>
                     </div>
                 </div>
-
                 <div class="brand-item">
-                    <img src="imagen7.png" alt="Nike Hombre">
+                    <img src="assets/images/imagen7.png" alt="Nike Hombre">
                     <div class="brand-name">Nike Hombre</div>
                     <div class="brand-links">
                         <a href="#">sección</a>
                         <a href="#">ver colección</a>
                     </div>
                 </div>
-
                 <div class="brand-item">
-                    <img src="imagen8.png" alt="Nike Mujer">
+                    <img src="assets/images/imagen8.png" alt="Nike Mujer">
                     <div class="brand-name">Nike Mujer</div>
                     <div class="brand-links">
                         <a href="#">sección</a>
                         <a href="#">ver colección</a>
                     </div>
                 </div>
-
                 <div class="brand-item">
-                    <img src="imagen9.png" alt="Puma Hombre">
+                    <img src="assets/images/imagen9.png" alt="Puma Hombre">
                     <div class="brand-name">Puma Hombre</div>
                     <div class="brand-links">
                         <a href="#">sección</a>
                         <a href="#">ver colección</a>
                     </div>
                 </div>
-
                 <div class="brand-item">
-                    <img src="imagen10.png" alt="Puma Mujer">
+                    <img src="assets/images/imagen10.png" alt="Puma Mujer">
                     <div class="brand-name">Puma Mujer</div>
                     <div class="brand-links">
                         <a href="#">sección</a>
@@ -105,7 +98,6 @@
             </div>
         </div>
 
-        <!-- BOTAS y ZAPATILLAS -->
         <div class="footer-links">
             <span>BOTAS</span>
             <span>ZAPATILLAS</span>
@@ -113,5 +105,33 @@
 
     </div>
 
+    <script>
+        (function() {
+            var filtros = document.querySelectorAll('#categoriaFiltro span');
+            var productos = document.querySelectorAll('#productosContainer .product-card');
+
+            function filtrar(categoria) {
+                productos.forEach(function(producto) {
+                    var cat = producto.getAttribute('data-categoria');
+                    producto.style.display = (categoria === 'todos' || cat === categoria) ? 'block' : 'none';
+                });
+
+                filtros.forEach(function(span) {
+                    span.classList.remove('highlight');
+                    if (span.getAttribute('data-categoria') === categoria) {
+                        span.classList.add('highlight');
+                    }
+                });
+            }
+
+            filtros.forEach(function(span) {
+                span.addEventListener('click', function(e) {
+                    filtrar(this.getAttribute('data-categoria'));
+                });
+            });
+
+            filtrar('todos');
+        })();
+    </script>
 </body>
 </html>
