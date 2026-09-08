@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo Más Vendido - Tienda de Zapatos</title>
+    <link rel="stylesheet" href="assets/styles/page3.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1 class="main-title">Lo Más Vendido</h1>
+
+        <div class="top-section">
+            <div class="sub-categories" id="categoriaFiltro">
+                <span class="highlight" data-categoria="todos">TODOS</span>
+                <span data-categoria="damas">DÁMAS</span>
+                <span data-categoria="caballeros">CABALLEROS</span>
+                <span data-categoria="kids">KIDS</span>
+            </div>
+
+            <div class="product-grid" id="productosContainer">
+                <div class="product-card" data-categoria="damas">
+                    <div class="product-wrapper">
+                        <img src="assets/images/images1.jpg" alt="Botas Sokso" class="product-image">
+                        <div class="product-info">
+                            <div class="info-box">
+                                <div class="product-name">BOTAS SOKSO</div>
+                                <div class="product-price">S/.189</div>
+                            </div>
+                            <div class="arrow-circle">></div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="product-card" data-categoria="damas">
+                    <div class="product-wrapper">
+                        <img src="assets/images/images1.jpg" alt="Botas Sokso" class="product-image">
+                        <div class="product-info">
+                            <div class="info-box">
+                                <div class="product-name">BOTAS SOKSO</div>
+                                <div class="product-price">S/.189</div>
+                            </div>
+                            <div class="arrow-circle">></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-categoria="caballeros">
+                    <div class="product-wrapper">
+                        <img src="assets/images/imagen2.jpg" alt="Zapatos Estela Sokso" class="product-image">
+                        <div class="product-info">
+                            <div class="info-box">
+                                <div class="product-name">ZAPATOS ESTELA SOKSO</div>
+                                <div class="product-price">S/.278</div>
+                            </div>
+                            <div class="arrow-circle">></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card" data-categoria="kids">
+                    <div class="product-wrapper">
+                        <img src="assets/images/NIÑA.jpg" alt="Zapatos Nina Simik" class="product-image">
+                        <div class="product-info">
+                            <div class="info-box">
+                                <div class="product-name">ZAPATOS NINA SIMIK</div>
+                                <div class="product-price">S/.149</div>
+                            </div>
+                            <div class="arrow-circle">></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="brands-section">
+            <h2>Grandes Marcas</h2>
+
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <img src="assets/images/ADIDAS1.jpg" alt="Adidas Hombre">
+                    <div class="brand-name">Adidas Hombre</div>
+
+                </div>
+                <div class="brand-item">
+                    <img src="assets/images/ADIDAS2.jpg" alt="Adidas Mujer">
+                    <div class="brand-name">Adidas Mujer</div>
+
+                </div>
+                <div class="brand-item">
+                    <img src="assets/images/NIKE.jpg" alt="Nike Hombre">
+                    <div class="brand-name">Nike Hombre</div>
+
+                </div>
+                <div class="brand-item">
+                    <img src="assets/images/NIKE M.jpg" alt="Nike Mujer">
+                    <div class="brand-name">Nike Mujer</div>
+
+                </div>
+                <div class="brand-item">
+                    <img src="assets/images/PUMA1.jpg" alt="Puma Hombre">
+                    <div class="brand-name">Puma Hombre</div>
+
+                </div>
+                <div class="brand-item">
+                    <img src="assets/images/PUMA M.jpg" alt="Puma Mujer">
+                    <div class="brand-name">Puma Mujer</div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="publicidad">
+            <img src="assets/images/PUBLICIDAD 1.jpg" alt="Publicidad 1">
+            <img src="assets/images/PUBLICIDAD 2.jpg" alt="Publicidad 2">
+        </div>
+
+    </div>
+
+    <script>
+        (function() {
+            var filtros = document.querySelectorAll('#categoriaFiltro span');
+            var productos = document.querySelectorAll('#productosContainer .product-card');
+
+            function filtrar(categoria) {
+                productos.forEach(function(producto) {
+                    var cat = producto.getAttribute('data-categoria');
+                    producto.style.display = (categoria === 'todos' || cat === categoria) ? 'block' : 'none';
+                });
+
+                filtros.forEach(function(span) {
+                    span.classList.remove('highlight');
+                    if (span.getAttribute('data-categoria') === categoria) {
+                        span.classList.add('highlight');
+                    }
+                });
+            }
+
+            filtros.forEach(function(span) {
+                span.addEventListener('click', function(e) {
+                    filtrar(this.getAttribute('data-categoria'));
+                });
+            });
+
+            filtrar('todos');
+        })();
+    </script>
+</body>
+</html>
