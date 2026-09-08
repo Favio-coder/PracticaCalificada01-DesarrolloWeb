@@ -1,6 +1,6 @@
-Integrantes del grupo:
+## Integrantes del grupo
 
-Asturimac Medina Richard Favio
-Brittany Gonzales Quiñonez
-Torres Ambrosio Katherine Medally
-Ramos Tacza Camilda
+1. **Asturimac Medina Richard Favio**
+2. **Brittany Gonzales Quiñonez**
+3. **Torres Ambrosio Katherine Medally**
+4. **Ramos Tacza Camilda**
