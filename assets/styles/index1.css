@@ -1,0 +1,484 @@
+/* =====================================
+   CONFIGURACIÓN GENERAL
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   FONDO DE LA PÁGINA
+===================================== */
+
+body {
+    background: #111214;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =====================================
+   CONTENEDOR PRINCIPAL
+===================================== */
+
+.page1 {
+
+    min-height: 100vh;
+
+    padding: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/* =====================================
+   VENTANA PRINCIPAL
+===================================== */
+
+.page1-window {
+
+    width: 100%;
+    max-width: 1500px;
+
+    background: #151619;
+
+    border: 1px solid #55585c;
+
+    border-radius: 5px;
+
+    padding: 18px;
+
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+
+}
+
+
+/* =====================================
+   BARRA SUPERIOR
+===================================== */
+
+.top-bar {
+
+    width: 100%;
+    height: 75px;
+
+    background: #454649;
+
+    border-radius: 4px;
+
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 0 25px;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =====================================
+   CONTENEDOR DE ICONOS
+===================================== */
+
+.top-icons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+/* =====================================
+   ICONOS SVG
+===================================== */
+
+.top-icons svg {
+
+    width: 28px;
+    height: 28px;
+
+    fill: none;
+
+    stroke: #d0d0d0;
+
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    opacity: 0.8;
+
+}
+
+
+/* =====================================
+   FORMULARIO
+===================================== */
+
+.page1-form {
+
+    padding: 10px;
+
+}
+
+
+/* =====================================
+   GRUPO DE INPUT
+===================================== */
+
+.input-group {
+
+    position: relative;
+
+    margin-bottom: 38px;
+
+}
+
+
+/* =====================================
+   TEXT FIELD
+===================================== */
+
+.input-group input {
+
+    width: 100%;
+
+    height: 90px;
+
+    padding: 30px 20px 10px;
+
+    background: #202124;
+
+    color: white;
+
+    font-size: 18px;
+
+    border: none;
+
+    border-bottom: 2px solid #4d5054;
+
+    outline: none;
+
+}
+
+
+/* =====================================
+   LABEL NORMAL
+===================================== */
+
+.input-group label {
+
+    position: absolute;
+
+    left: 20px;
+
+    top: 35px;
+
+    color: #b8b8ba;
+
+    font-size: 18px;
+
+    pointer-events: none;
+
+    transition: 0.3s ease;
+
+}
+
+
+/* =====================================
+   FLOATING LABEL
+
+   Cuando se hace click:
+   - El texto sube
+   - Cambia a celeste
+===================================== */
+
+.input-group input:focus + label,
+
+.input-group input:not(:placeholder-shown) + label {
+
+    top: 12px;
+
+    font-size: 13px;
+
+    color: #63e6e2;
+
+}
+
+
+/* =====================================
+   LÍNEA CELESTE
+
+   Cuando se hace click
+===================================== */
+
+.input-group input:focus {
+
+    border-bottom-color: #63e6e2;
+
+}
+
+
+/* =====================================
+   DRAG & DROP
+===================================== */
+
+.drop-container {
+
+    margin-bottom: 35px;
+
+}
+
+
+/* CAMPO DE IMAGEN */
+
+.image-upload {
+
+    width: 100%;
+
+    height: 50px;
+
+    background: #202124;
+
+    border-bottom: 2px solid #4d5054;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+/* CUANDO SE ARRASTRA UNA IMAGEN */
+
+.image-upload.drag-active {
+
+    border-bottom-color: #63e6e2;
+
+    background: #252a2d;
+
+}
+
+
+/* ICONO SVG DE IMAGEN */
+
+.image-upload svg {
+
+    width: 28px;
+
+    height: 28px;
+
+    fill: none;
+
+    stroke: #b9b9bb;
+
+    stroke-width: 2;
+
+}
+
+
+/* NOMBRE DEL ARCHIVO */
+
+#fileName {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #aaaaaa;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================
+   CHECKBOX
+===================================== */
+
+.checkbox-group {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 45px;
+
+}
+
+
+/* CUADRO DEL CHECKBOX */
+
+.checkbox-group input {
+
+    width: 28px;
+
+    height: 28px;
+
+    accent-color: #63e6e2;
+
+    cursor: pointer;
+
+}
+
+
+/* TEXTO */
+
+.checkbox-group label {
+
+    color: #d0d0d0;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.buttons {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+/* BOTONES */
+
+.buttons button {
+
+    background: #202124;
+
+    color: #dddddd;
+
+    border: none;
+
+    border-radius: 4px;
+
+    padding: 18px 25px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+/* EFECTO HOVER */
+
+.buttons button:hover {
+
+    background: #303236;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* EFECTO AL HACER CLICK */
+
+.buttons button:active {
+
+    transform: translateY(0);
+
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 600px) {
+
+    .page1 {
+
+        padding: 10px;
+
+    }
+
+
+    .page1-window {
+
+        padding: 10px;
+
+    }
+
+
+    .top-bar {
+
+        height: 60px;
+
+        padding: 0 15px;
+
+    }
+
+
+    .top-icons {
+
+        gap: 15px;
+
+    }
+
+
+    .top-icons svg {
+
+        width: 22px;
+
+        height: 22px;
+
+    }
+
+
+    .input-group input {
+
+        height: 75px;
+
+    }
+
+
+    .buttons {
+
+        gap: 10px;
+
+    }
+
+
+    .buttons button {
+
+        width: 100%;
+
+        padding: 15px 10px;
+
+        font-size: 13px;
+
+    }
+
+}

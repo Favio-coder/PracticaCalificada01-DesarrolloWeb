@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Page 1 - Formulario</title>
+
+    <!-- Conexión con CSS -->
+    <link rel="stylesheet" href="assets/styles/index1.css">
+</head>
+
+<body>
+
+    <section class="page1">
+
+        <!-- VENTANA PRINCIPAL -->
+        <div class="page1-window">
+
+
+            <!-- BARRA SUPERIOR CON 4 ICONOS SVG -->
+            <div class="top-bar">
+
+                <div class="top-icons">
+
+                    <!-- ICONO 1: SOL -->
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="M4.93 4.93l1.41 1.41"></path>
+                        <path d="M17.66 17.66l1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="M4.93 19.07l1.41-1.41"></path>
+                        <path d="M17.66 6.34l1.41-1.41"></path>
+                    </svg>
+
+
+                    <!-- ICONO 2: UBICACIÓN -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12z"></path>
+                        <circle cx="12" cy="9" r="2"></circle>
+                    </svg>
+
+
+                    <!-- ICONO 3: COPIAR -->
+                    <svg viewBox="0 0 24 24">
+                        <rect x="9" y="9" width="11" height="11" rx="1"></rect>
+                        <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"></path>
+                    </svg>
+
+
+                    <!-- ICONO 4: CÓDIGO -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 9l-4 3 4 3"></path>
+                        <path d="M16 9l4 3-4 3"></path>
+                    </svg>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORMULARIO -->
+            <form class="page1-form">
+
+
+                <!-- TEXT FIELD 1 -->
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder=" "
+                        required
+                    >
+
+                    <label for="nombre">
+                        Name
+                    </label>
+
+                </div>
+
+
+                <!-- TEXT FIELD 2 -->
+                <div class="input-group">
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder=" "
+                        required
+                    >
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                </div>
+
+
+                <!-- TEXT FIELD 3 -->
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        id="item"
+                        placeholder=" "
+                        required
+                    >
+
+                    <label for="item">
+                        Item
+                    </label>
+
+                </div>
+
+
+                <!-- CAMPO DE IMAGEN -->
+                <div class="drop-container">
+
+                    <div class="image-upload" id="dropArea">
+
+                        <!-- ICONO SVG DE IMAGEN -->
+                        <svg viewBox="0 0 24 24">
+
+                            <rect
+                                x="3"
+                                y="4"
+                                width="18"
+                                height="16"
+                                rx="2">
+                            </rect>
+
+                            <circle
+                                cx="8"
+                                cy="9"
+                                r="2">
+                            </circle>
+
+                            <path
+                                d="M3 18l5-5 4 4 3-3 6 4">
+                            </path>
+
+                        </svg>
+
+                    </div>
+
+                    <span id="fileName">
+                        Arrastra una imagen aquí
+                    </span>
+
+                </div>
+
+
+                <!-- CHECKBOX -->
+                <div class="checkbox-group">
+
+                    <input
+                        type="checkbox"
+                        id="agree"
+                    >
+
+                    <label for="agree">
+                        Do you agree?
+                    </label>
+
+                </div>
+
+
+                <!-- BOTONES -->
+                <div class="buttons">
+
+                    <button type="submit">
+                        SUBMIT
+                    </button>
+
+                    <button type="reset">
+                        CLEAR
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT PARA DRAG & DROP -->
+    <script>
+
+        const dropArea = document.getElementById("dropArea");
+
+        const fileName = document.getElementById("fileName");
+
+
+        /* CUANDO EL ARCHIVO ESTÁ ENCIMA */
+
+        dropArea.addEventListener("dragover", function(event) {
+
+            event.preventDefault();
+
+            dropArea.classList.add("drag-active");
+
+        });
+
+
+        /* CUANDO EL ARCHIVO SALE DEL ÁREA */
+
+        dropArea.addEventListener("dragleave", function() {
+
+            dropArea.classList.remove("drag-active");
+
+        });
+
+
+        /* CUANDO SE SUELTA EL ARCHIVO */
+
+        dropArea.addEventListener("drop", function(event) {
+
+            event.preventDefault();
+
+            dropArea.classList.remove("drag-active");
+
+
+            const file = event.dataTransfer.files[0];
+
+
+            if (file) {
+
+                if (file.type.startsWith("image/")) {
+
+                    fileName.textContent = file.name;
+
+                }
+
+                else {
+
+                    fileName.textContent =
+                        "Solo puedes arrastrar imágenes.";
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
