@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.main-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #1a1a2e;
+    text-align: center;
+    margin-bottom: 5px;
+    border-bottom: 3px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* SECCIONES */
+.top-section {
+    margin-top: 20px;
+}
+
+.top-section .sub-categories {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 25px;
+}
+.top-section .sub-categories span {
+    cursor: default;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+.top-section .sub-categories span:hover {
+    background: #eaeaea;
+}
+.top-section .sub-categories .highlight {
+    color: #d32f2f;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 20px 0 30px;
+}
+
+/* === NUEVO ESTILO PARA PRODUCTOS (vertical) === */
+.product-card {
+    background: transparent;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: none;
+    transition: transform 0.2s;
+    flex: 1 1 calc(25% - 25px); /* 4 columnas por defecto */
+    min-width: 180px;
+}
+.product-card:hover {
+    transform: scale(1.01);
+}
+
+.product-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: #c8c8c8;        /* plomo */
+    border-radius: 16px;
+    padding: 12px;
+    border: 1px solid #b0b0b0;
+    align-items: center;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #fff;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+.product-image:hover {
+    opacity: 1;  /* +10% */
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* para separar rectángulo y círculo */
+    gap: 12px;
+    width: 100%;
+}
+
+.info-box {
+    background: #6a1b9a;  
+    padding: 6px 20px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;     
+    align-items: center;
+    justify-content: center;
+    gap: 12px;              
+    box-shadow: 0 2px 8px rgba(128, 128, 129, 0.3);
+    flex: 2;               
+    min-width: 140px;        
+}
+
+.info-box .product-name {
+    font-weight: 700;
+    font-size: 0.65rem;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.3px;
+    white-space: nowrap;    
+}
+
+.info-box .product-price {
+    font-weight: 700;
+    font-size: 0.65rem;
+    color: #ffffff;
+    margin: 0;              
+    white-space: nowrap;
+}
+
+.arrow-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #6a1b9a;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(106, 27, 154, 0.3);
+    flex-shrink: 0;
+    cursor: default;
+    transition: background 0.2s;
+}
+.arrow-circle:hover {
+    background: #8e24aa;
+}
+
+/* SECCIÓN MARCAS */
+.brands-section {
+    margin: 40px 0 30px;
+}
+
+.brands-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    color: #1a1a2e;
+    border-top: 2px solid #e0e0e0;
+    padding-top: 25px;
+}
+
+.brands-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px 40px;
+}
+
+.brand-item {
+    flex: 0 1 180px;
+    text-align: center;
+    background: #d5d4d4;
+    border-radius: 16px;
+    padding: 20px 10px 15px;
+    transition: background 0.2s;
+}
+.brand-item:hover {
+    background: rgba(67, 67, 67, 0.02);
+}
+.brand-item img {
+    width: 120px;
+    height: 120px;
+    background: #7e7e7e;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+.brand-item img:hover {
+    opacity: 1;
+}
+
+.brand-item .brand-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    margin: 6px 0 4px;
+}
+
+.brand-item .brand-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #0066cc;
+}
+.brand-item .brand-links a {
+    color: #0066cc;
+    text-decoration: none;
+    border-bottom: 1px dashed #ccc;
+    transition: color 0.2s, border-color 0.2s;
+}
+.brand-item .brand-links a:hover {
+    color: #d32f2f;
+    border-bottom-color: #d32f2f;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    border-top: 2px solid #e0e0e0;
+    padding-top: 25px;
+    margin-top: 20px;
+}
+.footer-links span {
+    cursor: default;
+    padding: 6px 18px;
+    border-radius: 30px;
+    background: #f0f0f0;
+    transition: background 0.2s, color 0.2s;
+}
+.footer-links span:hover {
+    background: #1a1a2e;
+    color: #fff;
+}
+
+.publicidad {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.publicidad img {
+    width: calc(50% - 10px);
+    max-width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+.publicidad img:hover {
+    transform: scale(1.02);
+}
+
+/* Pantallas grandes (<1200px) */
+@media (max-width: 1199px) {
+    .product-card {
+        flex: 1 1 calc(33.333% - 25px);
+    }
+    .brand-item {
+        flex: 0 1 160px;
+    }
+}
+
+/* Pantallas medianas (<900px) */
+@media (max-width: 899px) {
+    .product-card {
+        flex: 1 1 calc(50% - 25px);
+        min-width: 150px;
+    }
+    .product-image {
+        max-width: 150px;
+    }
+    .info-box .product-name {
+        font-size: 0.75rem;
+    }
+    .info-box .product-price {
+        font-size: 0.85rem;
+    }
+    .arrow-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    .brands-grid {
+        gap: 20px;
+    }
+    .brand-item {
+        flex: 0 1 140px;
+    }
+    .main-title {
+        font-size: 2.2rem;
+    }
+    .top-section .sub-categories {
+        gap: 15px;
+        font-size: 1rem;
+        flex-wrap: wrap;
+    }
+}
+
+/* Pantallas pequeñas (<480px) */
+@media (max-width: 479px) {
+    .container {
+        padding: 15px;
+    }
+    .main-title {
+        font-size: 1.8rem;
+    }
+    .product-card {
+        flex: 1 1 100%;
+        min-width: unset;
+    }
+    .product-image {
+        max-width: 180px;
+    }
+    .info-box {
+        padding: 4px 12px;
+    }
+    .info-box .product-name {
+        font-size: 0.7rem;
+    }
+    .info-box .product-price {
+        font-size: 0.8rem;
+    }
+    .arrow-circle {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+    .brands-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .brand-item {
+        flex: 0 1 auto;
+        width: 80%;
+        max-width: 220px;
+    }
+    .footer-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        font-size: 1.1rem;
+    }
+    .top-section .sub-categories {
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+    .publicidad img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
