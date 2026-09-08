@@ -143,9 +143,6 @@ body {
 .brand-item:hover {
     background: rgba(67, 67, 67, 0.02); 
 }
-git add .
-git commit -m "Ajustes AÑADIENCO CATEGORIA Y PUBLICIDAD DE ABAJO"
-git push origin Gonzales-Quiñones
 .brand-item img {
     width: 120px;
     height: 120px;
