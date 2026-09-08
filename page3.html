@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo Más Vendido - Tienda de Zapatos</title>
     <link rel="stylesheet" href="assets/styles/page3.css">
+    <style>
+        /* Estilos adicionales para círculos en marcas y nueva sección publicitaria */
+        .brand-item img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .publicidad {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .publicidad img {
+            width: calc(50% - 10px);
+            max-width: 300px;
+            border: 2px solid #ddd;
+            border-radius: 0; /* borde cuadrado */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .publicidad img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Ajuste responsivo para publicidad */
+        @media (max-width: 600px) {
+            .publicidad img {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -48,59 +86,42 @@
 
             <div class="brands-grid">
                 <div class="brand-item">
-                    <img src="assets/images/imagen5.png" alt="Adidas Hombre">
+                    <img src="assets/images/ADIDAS1.jpg" alt="Adidas Hombre">
                     <div class="brand-name">Adidas Hombre</div>
-                    <div class="brand-links">
-                        <a href="#">sección</a>
-                        <a href="#">ver colección</a>
-                    </div>
+
                 </div>
                 <div class="brand-item">
-                    <img src="assets/images/imagen6.png" alt="Adidas Mujer">
+                    <img src="assets/images/ADIDAS2.jpg" alt="Adidas Mujer">
                     <div class="brand-name">Adidas Mujer</div>
-                    <div class="brand-links">
-                        <a href="#">sección</a>
-                        <a href="#">ver colección</a>
-                    </div>
+
                 </div>
                 <div class="brand-item">
-                    <img src="assets/images/imagen7.png" alt="Nike Hombre">
+                    <img src="assets/images/NIKE.jpg" alt="Nike Hombre">
                     <div class="brand-name">Nike Hombre</div>
-                    <div class="brand-links">
-                        <a href="#">sección</a>
-                        <a href="#">ver colección</a>
-                    </div>
+
                 </div>
                 <div class="brand-item">
-                    <img src="assets/images/imagen8.png" alt="Nike Mujer">
+                    <img src="assets/images/NIKE M.jpg" alt="Nike Mujer">
                     <div class="brand-name">Nike Mujer</div>
-                    <div class="brand-links">
-                        <a href="#">sección</a>
-                        <a href="#">ver colección</a>
-                    </div>
+
                 </div>
                 <div class="brand-item">
-                    <img src="assets/images/imagen9.png" alt="Puma Hombre">
+                    <img src="assets/images/PUMA1.jpg" alt="Puma Hombre">
                     <div class="brand-name">Puma Hombre</div>
-                    <div class="brand-links">
-                        <a href="#">sección</a>
-                        <a href="#">ver colección</a>
-                    </div>
+
                 </div>
                 <div class="brand-item">
-                    <img src="assets/images/imagen10.png" alt="Puma Mujer">
+                    <img src="assets/images/PUMA M.jpg" alt="Puma Mujer">
                     <div class="brand-name">Puma Mujer</div>
-                    <div class="brand-links">
-                        <a href="#">sección</a>
-                        <a href="#">ver colección</a>
-                    </div>
+
                 </div>
             </div>
         </div>
 
-        <div class="footer-links">
-            <span>BOTAS</span>
-            <span>ZAPATILLAS</span>
+
+        <div class="publicidad">
+            <img src="assets/images/PUBLICIDAD 1.jpg" alt="Publicidad 1">
+            <img src="assets/images/PUBLICIDAD 2.jpg" alt="Publicidad 2">
         </div>
 
     </div>
