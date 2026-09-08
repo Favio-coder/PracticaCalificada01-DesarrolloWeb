@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica Calificada 1</title>
+    <link rel="stylesheet" href="assets/styles/index2.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="window-container">
+        <div class="window-header">
+          <div class="window-controls">
+            <svg viewBox="0 0 24 24">
+                <circle
+                    cx="12"
+                    cy="12"
+                    r="8"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                />
+                <path d="M12 8V16M8 12H16" stroke="white" stroke-width="2" />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12,3 21,12 12,21 3,12"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <rect
+                x="4"
+                y="4"
+                width="16"
+                height="16"
+                rx="2"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+              />
+              <circle cx="12" cy="12" r="3" fill="white" />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12,5 20,19 4,19"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="stepper">
+          <div class="step completed"><span>1</span> Review Order</div>
+          <div class="step active"><span>2</span> Select Shipping</div>
+          <div class="step"><span>3</span> Submit</div>
+        </div>
+
+        <form class="shipping-form">
+          <h3>Shipping</h3>
+          <p class="label-text">Delivery Method</p>
+
+          <label class="radio-option">
+            <input type="radio" name="delivery" checked />
+            <span class="custom-radio"></span>
+            Standard Shipping
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="delivery" />
+            <span class="custom-radio"></span>
+            Priority Shipping
+          </label>
+
+          <label class="radio-option">
+            <input type="radio" name="delivery" />
+            <span class="custom-radio"></span>
+            Express Shipping
+          </label>
+
+          <div class="form-footer">
+            <button type="button" class="btn-text">PREVIOUS</button>
+            <button type="button" class="btn-next">NEXT</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Ejercicio 3b: Card Selector de Color -->
+      <section class="color-picker-card">
+        <div id="preview-color" class="color-display"></div>
+
+        <div class="controls-section">
+          <div class="control-row">
+            <label>R</label>
+            <input type="range" id="r-range" min="0" max="255" value="80" />
+            <input type="number" id="r-num" min="0" max="255" value="80" />
+          </div>
+          <div class="control-row">
+            <label>G</label>
+            <input type="range" id="g-range" min="0" max="255" value="165" />
+            <input type="number" id="g-num" min="0" max="255" value="165" />
+          </div>
+          <div class="control-row">
+            <label>B</label>
+            <input type="range" id="b-range" min="0" max="255" value="92" />
+            <input type="number" id="b-num" min="0" max="255" value="92" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Lógica para el selector de color (Ejercicio 3b)
+      const rRange = document.getElementById("r-range");
+      const gRange = document.getElementById("g-range");
+      const bRange = document.getElementById("b-range");
+      const rNum = document.getElementById("r-num");
+      const gNum = document.getElementById("g-num");
+      const bNum = document.getElementById("b-num");
+      const preview = document.getElementById("preview-color");
+
+      function updateColor() {
+        const r = rRange.value;
+        const g = gRange.value;
+        const b = bRange.value;
+        preview.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        rNum.value = r;
+        gNum.value = g;
+        bNum.value = b;
+      }
+
+      function syncFromNumber() {
+        rRange.value = rNum.value;
+        gRange.value = gNum.value;
+        bRange.value = bNum.value;
+        updateColor();
+      }
+
+      [rRange, gRange, bRange].forEach((el) =>
+        el.addEventListener("input", updateColor),
+      );
+      [rNum, gNum, bNum].forEach((el) =>
+        el.addEventListener("input", syncFromNumber),
+      );
+
+      updateColor(); // Inicializar
+    </script>
+  </body>
+</html>
