@@ -115,7 +115,7 @@ body {
 }
 
 .info-box {
-    background: #6a1b9a;      /* morado */
+    background: #6a1b9a;  
     padding: 6px 20px;
     border-radius: 30px;
     display: flex;
@@ -123,14 +123,14 @@ body {
     align-items: center;
     justify-content: center;
     gap: 12px;              
-    box-shadow: 0 2px 8px rgba(106, 27, 154, 0.3);
+    box-shadow: 0 2px 8px rgba(128, 128, 129, 0.3);
     flex: 2;               
     min-width: 140px;        
 }
 
 .info-box .product-name {
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.65rem;
     color: #fff;
     margin: 0;
     letter-spacing: 0.3px;
@@ -139,7 +139,7 @@ body {
 
 .info-box .product-price {
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.65rem;
     color: #ffffff;
     margin: 0;              
     white-space: nowrap;
