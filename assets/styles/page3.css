@@ -22,7 +22,7 @@ body {
 }
 
 .main-title {
-    font-size: 2.8rem;
+    font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1px;
     color: #1a1a2e;
@@ -35,13 +35,15 @@ body {
 /* SECCIONES */
 .top-section {
     margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .top-section .sub-categories {
     display: flex;
     justify-content: center;
     gap: 30px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #555;
     margin-bottom: 25px;
@@ -60,20 +62,20 @@ body {
 }
 
 .product-grid {
+    
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
     margin: 20px 0 30px;
 }
 
-/* === NUEVO ESTILO PARA PRODUCTOS (vertical) === */
 .product-card {
     background: transparent;
     border-radius: 16px;
     padding: 0;
     box-shadow: none;
     transition: transform 0.2s;
-    flex: 1 1 calc(25% - 25px); /* 4 columnas por defecto */
+    flex: 1 1 calc(25% - 25px); 
     min-width: 180px;
 }
 .product-card:hover {
@@ -83,10 +85,8 @@ body {
 .product-wrapper {
     display: flex;
     flex-direction: column;
-    background: #c8c8c8;        /* plomo */
-    border-radius: 16px;
+    background: #ededed;    
     padding: 12px;
-    border: 1px solid #b0b0b0;
     align-items: center;
 }
 
@@ -97,19 +97,18 @@ body {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 12px;
-    background: #fff;
     margin-bottom: 10px;
-    opacity: 0.9;
+    opacity: 0.8;
     transition: opacity 0.3s ease;
 }
-.product-image:hover {
-    opacity: 1;  /* +10% */
-}
 
+.product-image:hover {
+    opacity: 1;
+}
 .product-info {
     display: flex;
     align-items: center;
-    justify-content: space-between;  /* para separar rectángulo y círculo */
+    justify-content: space-between;
     gap: 12px;
     width: 100%;
 }
@@ -152,7 +151,7 @@ body {
     background: #6a1b9a;
     color: #fff;
     font-size: 1.3rem;
-    font-weight: 300;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,28 +188,28 @@ body {
 }
 
 .brand-item {
-    flex: 0 1 180px;
+    flex: 0 1 30px;
     text-align: center;
-    background: #d5d4d4;
     border-radius: 16px;
     padding: 20px 10px 15px;
     transition: background 0.2s;
 }
-.brand-item:hover {
-    background: rgba(67, 67, 67, 0.02);
-}
+
 .brand-item img {
-    width: 120px;
-    height: 120px;
-    background: #7e7e7e;
+    width: 150px;
+    height: 150px;
+    background: #d1d1d1;
     object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 8px;
-    opacity: 0.9;
+    margin-bottom: 10px;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
 .brand-item img:hover {
-    opacity: 1;
+    opacity: 0.15;
+}
+.brand-item:img:hover {
+    background: rgba(67, 67, 67, 0.52);
 }
 
 .brand-item .brand-name {
@@ -218,47 +217,6 @@ body {
     font-size: 1.1rem;
     color: #1a1a2e;
     margin: 6px 0 4px;
-}
-
-.brand-item .brand-links {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    font-size: 0.9rem;
-    color: #0066cc;
-}
-.brand-item .brand-links a {
-    color: #0066cc;
-    text-decoration: none;
-    border-bottom: 1px dashed #ccc;
-    transition: color 0.2s, border-color 0.2s;
-}
-.brand-item .brand-links a:hover {
-    color: #d32f2f;
-    border-bottom-color: #d32f2f;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #1a1a2e;
-    border-top: 2px solid #e0e0e0;
-    padding-top: 25px;
-    margin-top: 20px;
-}
-.footer-links span {
-    cursor: default;
-    padding: 6px 18px;
-    border-radius: 30px;
-    background: #f0f0f0;
-    transition: background 0.2s, color 0.2s;
-}
-.footer-links span:hover {
-    background: #1a1a2e;
-    color: #fff;
 }
 
 .publicidad {
